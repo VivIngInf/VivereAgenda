@@ -1,0 +1,6 @@
+
+.env
+/venv
+/Source/Modules/Bot/__pycache__
+/Source/Modules/Shared/__pycache__
+venv/.idea/venv.iml
