@@ -6,7 +6,7 @@
 
 SELEZIONA LINGUA [🇬🇧](../README.md) [🇮🇹](./README.ita.md)
 
-Vivere Agenda Bot è un bot progettato per gestire eventi, prenotazioni e comunicazioni tra diversi dipartimenti e 
+Vivere Agenda è un bot progettato per gestire eventi, prenotazioni e comunicazioni tra diversi dipartimenti e 
 aule all'interno di un edificio. Fornisce un'interfaccia intuitiva per amministratori e utenti per gestire richieste 
 di eventi, prenotazioni e gestione del calendario con integrazione in Google Calendar.
 
