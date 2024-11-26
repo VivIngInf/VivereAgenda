@@ -4,3 +4,6 @@
 /Source/Modules/Bot/__pycache__
 /Source/Modules/Shared/__pycache__
 venv/.idea/venv.iml
+Source/**/__pycache__/
+Source/**/**/__pycache__/
+**/*.sqlite
