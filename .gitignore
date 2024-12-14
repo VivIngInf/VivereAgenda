@@ -7,3 +7,4 @@ venv/.idea/venv.iml
 Source/**/__pycache__/
 Source/**/**/__pycache__/
 **/*.sqlite
+ditto.py

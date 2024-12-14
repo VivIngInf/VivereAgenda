@@ -28,12 +28,46 @@ def InsertUser(idTelegram : str, username : str, email : str, isAdmin : bool, is
     
     session.add(utente)
     session.commit()
+
+def RemoveUser(idTelegram: str) -> dict:
+    """
+        ADMIN: Rimuove l'utente con ID_Telegram idTelegram
+    """
+    if not CheckUserExists(idTelegram=idTelegram):
+        return {"Error": "Utente non esistente"}
+
+    session.query(Utente).filter(Utente.ID_Telegram == f"{idTelegram}").delete()
+    session.commit()
+
+    return {"State": f"Utente con ID_Telegram: '{idTelegram}' cancellato!"}
     
 def CheckUserExists(idTelegram : str) -> bool:
     query = session.query(Utente).filter(Utente.ID_Telegram == f"{idTelegram}")
     exists = session.query(query.exists()).scalar()
 
     return bool(exists)
+
+
+def GetUsername(idTelegram: str) -> str:
+    """DATABASE_HANDLER / USER_INFO: Ritorna l'username"""
+    return session.query(Utente).filter(Utente.ID_Telegram == f"{idTelegram}").one().username
+
+
+def GetEmail(idTelegram: str) -> str:
+    """DATABASE_HANDLER / USER_INFO: Ritorna l'email"""
+    return session.query(Utente).filter(Utente.ID_Telegram == f"{idTelegram}").one().email
+
+
+def GetIsVerified(idTelegram: str) -> bool:
+    """DATABASE_HANDLER: Ritorna se l'utente è stato approvato"""
+    user: Utente = session.query(Utente).filter(Utente.ID_Telegram == f"{idTelegram}").scalar()
+    return bool(user.is_Verified)
+
+def GetIsAdmin(idTelegram: str) -> bool:
+    """DATABASE_HANDLER: Ritorna il ruolo dell'utente"""
+
+    return bool(session.query(Utente).filter(Utente.ID_Telegram == f"{idTelegram}").one().is_Admin)
+
 
 def SetIsVerifiedUser(idTelegram : str, isVerified : bool):
     if not CheckUserExists(idTelegram=idTelegram):

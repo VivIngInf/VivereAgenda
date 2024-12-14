@@ -2,3 +2,10 @@ python-telegram-bot==20.3
 python-telegram-bot[job-queue]
 python-dotenv==0.21.0
 SQLAlchemy==2.0.22
+dnspython==2.7.0
+mysql==0.0.3
+mysql-connector-python==9.1.0
+mysqlclient==2.2.6
+py3dns==4.0.2
+validate_email==1.3
+windows-curses==2.4.0
